@@ -17,3 +17,14 @@ def delete_book(db: Session, book_id: int):
     db.commit()
     return db_book
   return None
+
+
+def update_book(db: Session, book_id: int, book_data: dict):
+  db_book = db.query(Book).filter(Book.id == book_id).first()
+  if db_book:
+    for key, value in book_data.items():
+      setattr(db_book, key, value)
+    db.commit()
+    db.refresh(db_book)
+    return db_book
+  return None
