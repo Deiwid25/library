@@ -1,5 +1,5 @@
 
-Este proyecto es una API para la gestión de libros, construida con FastAPI y Docker. Permite realizar operaciones CRUD sobre libros, gestionar datos y proporcionar documentación interactiva de la API.
+Este proyecto es una API para la gestión de libros, construida con FastAPI y Docker. Permite realizar operaciones CRUD sobre libros, gestionar datos y proporcionar documentación interactiva de la API. el proyecto funciona con el levantamiento del build de docker y del docker comoposo, corre un test de para la carga de los datos. 
 
 ## Instrucciones de instalación
 
