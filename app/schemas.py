@@ -16,4 +16,4 @@ class BookResponse(BaseModel):
   isbn: str
 
   class Config:
-    orm_mode = True
+    orm_mode = True 
