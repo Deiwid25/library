@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import Optional
-from app.crud import create_book, delete_book, update_book
+from app.crud import create_book, delete_book, update_book, get_books
 from app.schemas import *
 from app.database import get_db
 
@@ -26,3 +26,7 @@ def update_book_details(book_id: int, book_data: BookCreate, db: Session = Depen
   if not updated_book:
     raise HTTPException(status_code=404, detail="Book not found")
   return updated_book
+
+@router.get("/books/", response_model=list[BookResponse])
+def lists_books(skip: int = 0, limit: int = 10, title: Optional[str] = None, author: Optional[str] = None,  db: Session = Depends(get_db)):
+  return get_books(db, skip, limit, title=title, author=author)
