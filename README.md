@@ -44,7 +44,6 @@ Utilizar un middleware que verifique la validez del JWT en cada solicitud a los 
 Para la autorización, asignar roles o permisos a los usuarios y asegurarse de que solo los usuarios con permisos adecuados puedan acceder a ciertos recursos.
 
 2. **¿Qué estrategias utilizarías para escalar la aplicación?**
-
 Usar Docker y Kubernetes para crear múltiples instancias de la aplicación y distribuir la carga entre ellas.
 Implementar una base de datos escalable y replicada (como PostgreSQL con réplicas) para distribuir el tráfico de lectura y escritura.
 Utilizar un sistema de caché como Redis para almacenar resultados de consultas frecuentes y mejorar el rendimiento.
@@ -54,7 +53,6 @@ Implementar un balanceador de carga (como Nginx o HAProxy) para distribuir las s
 ya se encuentra implementada, con los parametros, skip y limit en la url de lsitar libros, puedes consultar en la documentacion 
 
 4. **¿Cómo asegurarías la seguridad de la aplicación (protección contra inyecciones SQL, XSS, etc.)?**
-
 Protección contra inyecciones SQL: Utilizaría un ORM como SQLAlchemy para manejar las consultas de la base de datos de forma segura, evitando el uso de consultas SQL sin procesar que puedan ser vulnerables a inyecciones. (esta ya se usa en el diseño actual)
 Protección contra XSS: Aseguraría que cualquier entrada de usuario sea validada y escapada antes de ser mostrada en la interfaz de usuario. Esto se puede hacer utilizando librerías que validen el contenido antes de ser mostrado en el frontend.
 Cifrado de contraseñas: Las contraseñas de los usuarios se almacenarían utilizando un algoritmo seguro de hashing (como bcrypt) para evitar que las contraseñas en texto claro sean expuestas en caso de una brecha de seguridad.
